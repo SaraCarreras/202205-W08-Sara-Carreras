@@ -1,10 +1,17 @@
-import { series } from './components/series.js';
-
-(() => {
-    document.addEventListener('DomContentLoaded', app);
-})();
+import { Header } from './components/header.js';
+import { Pending } from './components/pending.js';
+import { Watched } from './components/watched.js';
 
 function app() {
-    console.log('LOADING');
+    new Header('slot.header');
+    new Pending('slot.pending');
+    new Watched('slot.watched');
+    console.log('APPFunciona');
 }
-app();
+
+(() => {
+    document.addEventListener('DOMContentLoaded', () => {
+        app();
+        console.log('listener funciona');
+    });
+})();
