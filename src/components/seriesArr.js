@@ -1,4 +1,4 @@
-export const series = [
+export const seriesArr = [
     {
         id: 1,
         name: 'The Sopranos',
@@ -44,7 +44,7 @@ export const series = [
         name: 'Atypical',
         creator: 'Robia Rashid',
         year: 2017,
-        poster: 'https://www.cine.com/media/series/2711.jpg',
+        poster: 'https://pics.filmaffinity.com/atypical-405052091-large.jpg',
         watched: false,
         score: 0,
         emmies: 0,

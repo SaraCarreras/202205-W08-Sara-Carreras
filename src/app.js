@@ -1,17 +1,17 @@
 import { Header } from './components/header.js';
-import { Pending } from './components/pending.js';
-import { Watched } from './components/watched.js';
+import { Main } from './components/main.js';
 
-function app() {
+/*function app() {
     new Header('slot.header');
-    new Pending('slot.pending');
-    new Watched('slot.watched');
+    new Main('slot.main-sec');
+
     console.log('APPFunciona');
 }
-
+*/
 (() => {
     document.addEventListener('DOMContentLoaded', () => {
-        app();
+        new Header('slot.header');
+        new Main('slot.main');
         console.log('listener funciona');
     });
 })();
