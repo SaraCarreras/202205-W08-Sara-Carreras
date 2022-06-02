@@ -10,6 +10,7 @@ export class Pending extends Component {
         this.series = seriesArr;
         this.template = this.createTemplate();
         this.outerRender(this.selector);
+        //this.manageComponentW();
 
         //new DeleteButton('i.fas');
 
@@ -83,4 +84,24 @@ export class Pending extends Component {
             `;
         }
     }
+    /*
+    manageComponentW() {
+        document
+            .querySelectorAll('i.fas')
+            .forEach((item) =>
+                item.addEventListener(
+                    'click',
+                    this.handlerButtonDelete.bind(this)
+                )
+            );
+    }
+    handlerButtonDelete(ev) {
+        const selectedId = ev.target.dataset.id;
+
+        this.series = this.series.filter((item) => item.id !== +selectedId);
+        console.log(this.series);
+        this.createTemplate();
+        this.outerRender(this.selector);
+        this.manageComponentW();
+    }*/
 }

@@ -96,7 +96,8 @@ export class Watched extends Component {
     handlerButtonDelete(ev) {
         const selectedId = ev.target.dataset.id;
 
-        console.log('click', selectedId);
+        this.series = this.series.filter((item) => item.id !== +selectedId);
+        console.log(this.series);
     }
 
     /*
