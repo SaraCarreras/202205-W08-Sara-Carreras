@@ -29,7 +29,7 @@ export class Watched extends Component {
                                 <p class="serie__info">"${element.creator} ("${element.year})</p>
                                 <ul class="score" data-id="${element.id}">
                                     <ul class="score">
-             <p class="info">Watched!!!</p>
+             <p class="info">W!</p>
             <li class="score__star"   role= "button" >
                 <i class="icon--score fas fa-star" title="1/5"></i>
             </li>
