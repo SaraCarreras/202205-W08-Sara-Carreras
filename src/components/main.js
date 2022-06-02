@@ -27,4 +27,8 @@ export class Main extends Component {
         new Pending('slot.series-pending');
         new Watched('slot.series-watched');
     }
+
+    prueba(a) {
+        console.log('prueba');
+    }
 }

@@ -30,26 +30,30 @@ export class Pending extends Component {
                                     alt="${element.name} poster"
                                 />
                                 <h4 class="serie__title">"${element.name}</h4>
-                                <p class="serie__info">"${element.creator} ("${element.year})</p>
-                                <ul class="score" data-id="${element.id}" >
-             <p class="info">P!</p>
+                                <p class="serie__info">"${element.creator} ("${
+                    element.year
+                })</p>
+                                <ul class="score" " >
+            
             <li class="score__star"   role= "button" >
-                <i class="icon--score far fa-star" title="1/5"></i>
+                <i class="icon--score far fa-star" title="1/5" role= "button" data-number=${1}></i>
             </li>
             <li class="score__star">
-                <i class="icon--score far fa-star" title="2/5"></i>
+                <i class="icon--score far fa-star" title="2/5" role= "button" data-number=${2} ></i>
             </li>
             <li class="score__star">
-                <i class="icon--score far fa-star" title="3/5"></i>
+                <i class="icon--score far fa-star" title="3/5"  role= "button" data-number=${3}></i>
             </li>
             <li class="score__star">
-                <i class="icon--score far fa-star" title="4/5"></i>
+                <i class="icon--score far fa-star" title="4/5" role= "button"  data-number=${4}></i>
             </li>
             <li class="score__star">
-                <i class="icon--score far fa-star" title="5/5"></i>
+                <i class="icon--score far fa-star" title="5/5" role= "button" data-number=${5} ></i>
             </li>
         </ul>
-                                <i class="fas fa-times-circle icon--delete"   role= "button"   data-id= ${element.id} ></i>
+                                <i class="fas fa-times-circle icon--delete"    data-id= ${
+                                    element.id
+                                } ></i>
                             </li>
                             `;
             }
