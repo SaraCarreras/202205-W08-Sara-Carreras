@@ -1,6 +1,7 @@
 import { Component } from './component.js';
 //import { Score } from './score.js';
 import { seriesArr } from './seriesArr.js';
+//import { DeleteButton } from './delete_button.js';
 export class Watched extends Component {
     constructor(selector) {
         super();
@@ -8,6 +9,8 @@ export class Watched extends Component {
         this.series = seriesArr;
         this.template = this.createTemplate();
         this.outerRender(this.selector);
+        this.manageComponentW();
+        //new DeleteButton('i.fas');
         //new Score(`slot.score`);
     }
     createTemplate() {
@@ -44,7 +47,7 @@ export class Watched extends Component {
             </li>
         </ul>
                                 </ul>
-                                <i class="fas fa-times-circle icon--delete"></i>
+                                <i class="fas fa-times-circle icon--delete"  role= "button"></i>
                             </li>
                             `;
             }
@@ -79,6 +82,21 @@ export class Watched extends Component {
             `;
         }
     }
+
+    manageComponentW() {
+        document
+            .querySelectorAll('i.fas')
+            .forEach((item) =>
+                item.addEventListener(
+                    'click',
+                    this.handlerButtonDelete.bind(this)
+                )
+            );
+    }
+    handlerButtonDelete() {
+        console.log('click');
+    }
+
     /*
     showStars() {
         this.series.forEach((serie) => {

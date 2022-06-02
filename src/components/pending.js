@@ -1,7 +1,7 @@
 import { Component } from './component.js';
 //import { Score } from './score.js';
 import { seriesArr } from './seriesArr.js';
-//import { Score } from './score.js';
+//import { DeleteButton } from './delete_button.js';
 export class Pending extends Component {
     constructor(selector, score) {
         super();
@@ -10,6 +10,9 @@ export class Pending extends Component {
         this.series = seriesArr;
         this.template = this.createTemplate();
         this.outerRender(this.selector);
+
+        //new DeleteButton('i.fas');
+
         //this.showStars();
     }
 
@@ -45,7 +48,7 @@ export class Pending extends Component {
                 <i class="icon--score far fa-star" title="5/5"></i>
             </li>
         </ul>
-                                <i class="fas fa-times-circle icon--delete"></i>
+                                <i class="fas fa-times-circle icon--delete"   role= "button"></i>
                             </li>
                             `;
             }
@@ -79,17 +82,5 @@ export class Pending extends Component {
                 <p class="info">You already have not pending any serie</p>
             `;
         }
-    }
-    /*
-    showStars() {
-        this.series.forEach((serie) => {
-            if (serie.watched === false) {
-                new Score(`slot.score`);
-            }
-        });
-    }
-    */
-    deleteSerie() {
-        document.querySelector('.icon--delete');
     }
 }
