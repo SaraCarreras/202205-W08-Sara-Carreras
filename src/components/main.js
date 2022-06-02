@@ -10,7 +10,7 @@ export class Main extends Component {
         this.selector = selector;
         this.template = this.createTemplate();
         this.outerRender(this.selector);
-        this.createContent();
+        this.createComponents();
     }
     createTemplate() {
         return `
@@ -23,7 +23,7 @@ export class Main extends Component {
             </main>
         `;
     }
-    createContent() {
+    createComponents() {
         new Pending('slot.series-pending');
         new Watched('slot.series-watched');
     }
