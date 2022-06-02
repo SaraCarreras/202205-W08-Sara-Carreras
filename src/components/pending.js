@@ -30,7 +30,7 @@ export class Pending extends Component {
                                 />
                                 <h4 class="serie__title">"${element.name}</h4>
                                 <p class="serie__info">"${element.creator} ("${element.year})</p>
-                                <ul class="score">
+                                <ul class="score" data-id="${element.id}" >
              <p class="info">P!</p>
             <li class="score__star"   role= "button" >
                 <i class="icon--score far fa-star" title="1/5"></i>
@@ -48,7 +48,7 @@ export class Pending extends Component {
                 <i class="icon--score far fa-star" title="5/5"></i>
             </li>
         </ul>
-                                <i class="fas fa-times-circle icon--delete"   role= "button"></i>
+                                <i class="fas fa-times-circle icon--delete"   role= "button"   data-id= ${element.id} ></i>
                             </li>
                             `;
             }

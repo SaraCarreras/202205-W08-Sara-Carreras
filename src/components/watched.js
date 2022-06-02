@@ -47,7 +47,7 @@ export class Watched extends Component {
             </li>
         </ul>
                                 </ul>
-                                <i class="fas fa-times-circle icon--delete"  role= "button"></i>
+                                <i class="fas fa-times-circle icon--delete"  role= "button"  data-id= ${element.id} ></i>
                             </li>
                             `;
             }
@@ -93,8 +93,10 @@ export class Watched extends Component {
                 )
             );
     }
-    handlerButtonDelete() {
-        console.log('click');
+    handlerButtonDelete(ev) {
+        const selectedId = ev.target.dataset.id;
+
+        console.log('click', selectedId);
     }
 
     /*
