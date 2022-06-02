@@ -31,7 +31,7 @@ export class Pending extends Component {
                                 <h4 class="serie__title">"${element.name}</h4>
                                 <p class="serie__info">"${element.creator} ("${element.year})</p>
                                 <ul class="score">
-             <p class="info">Pending!!!</p>
+             <p class="info">P!</p>
             <li class="score__star"   role= "button" >
                 <i class="icon--score far fa-star" title="1/5"></i>
             </li>
