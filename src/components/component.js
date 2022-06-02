@@ -17,8 +17,4 @@ export class Component {
             document.querySelector(selector).innerHTML += this.template;
         }
     }
-
-    createTemplate() {
-        return ``;
-    }
 }

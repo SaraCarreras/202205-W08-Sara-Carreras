@@ -10,6 +10,7 @@ export class Pending extends Component {
         this.series = seriesArr;
         this.template = this.createTemplate();
         this.outerRender(this.selector);
+        //this.manageComponentW();
 
         //new DeleteButton('i.fas');
 
@@ -29,26 +30,30 @@ export class Pending extends Component {
                                     alt="${element.name} poster"
                                 />
                                 <h4 class="serie__title">"${element.name}</h4>
-                                <p class="serie__info">"${element.creator} ("${element.year})</p>
-                                <ul class="score">
-             <p class="info">P!</p>
+                                <p class="serie__info">"${element.creator} ("${
+                    element.year
+                })</p>
+                                <ul class="score" " >
+            
             <li class="score__star"   role= "button" >
-                <i class="icon--score far fa-star" title="1/5"></i>
+                <i class="icon--score far fa-star" title="1/5" role= "button" data-number=${1}></i>
             </li>
             <li class="score__star">
-                <i class="icon--score far fa-star" title="2/5"></i>
+                <i class="icon--score far fa-star" title="2/5" role= "button" data-number=${2} ></i>
             </li>
             <li class="score__star">
-                <i class="icon--score far fa-star" title="3/5"></i>
+                <i class="icon--score far fa-star" title="3/5"  role= "button" data-number=${3}></i>
             </li>
             <li class="score__star">
-                <i class="icon--score far fa-star" title="4/5"></i>
+                <i class="icon--score far fa-star" title="4/5" role= "button"  data-number=${4}></i>
             </li>
             <li class="score__star">
-                <i class="icon--score far fa-star" title="5/5"></i>
+                <i class="icon--score far fa-star" title="5/5" role= "button" data-number=${5} ></i>
             </li>
         </ul>
-                                <i class="fas fa-times-circle icon--delete"   role= "button"></i>
+                                <i class="fas fa-times-circle icon--delete"    data-id= ${
+                                    element.id
+                                } ></i>
                             </li>
                             `;
             }
@@ -83,4 +88,24 @@ export class Pending extends Component {
             `;
         }
     }
+    /*
+    manageComponentW() {
+        document
+            .querySelectorAll('i.fas')
+            .forEach((item) =>
+                item.addEventListener(
+                    'click',
+                    this.handlerButtonDelete.bind(this)
+                )
+            );
+    }
+    handlerButtonDelete(ev) {
+        const selectedId = ev.target.dataset.id;
+
+        this.series = this.series.filter((item) => item.id !== +selectedId);
+        console.log(this.series);
+        this.createTemplate();
+        this.outerRender(this.selector);
+        this.manageComponentW();
+    }*/
 }
