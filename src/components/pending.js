@@ -3,8 +3,9 @@ import { Component } from './component.js';
 import { seriesArr } from './seriesArr.js';
 import { Score } from './score.js';
 export class Pending extends Component {
-    constructor(selector) {
+    constructor(selector, score) {
         super();
+        this.score = score;
         this.selector = selector;
         this.series = seriesArr;
         this.template = this.createTemplate();
@@ -66,8 +67,12 @@ export class Pending extends Component {
     showStars() {
         this.series.forEach((serie) => {
             if (serie.watched === false) {
-                new Score(`slot.score`, this.serie);
+                new Score(`slot.score`);
             }
         });
+    }
+
+    deleteSerie() {
+        document.querySelector('.icon--delete');
     }
 }

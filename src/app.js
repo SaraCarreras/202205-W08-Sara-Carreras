@@ -10,8 +10,12 @@ import { Main } from './components/main.js';
 */
 (() => {
     document.addEventListener('DOMContentLoaded', () => {
-        new Header('slot.header');
-        new Main('slot.main');
+        app();
         console.log('listener funciona');
     });
 })();
+
+function app() {
+    new Header('slot.header');
+    new Main('slot.main');
+}

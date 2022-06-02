@@ -6,7 +6,7 @@ import { Watched } from './watched.js';
 export class Score extends Component {
     template;
     series;
-    constructor(selector) {
+    constructor(selector, series) {
         super();
         this.selector = selector;
         this.series = seriesArr;
@@ -18,14 +18,59 @@ export class Score extends Component {
     createTemplate() {
         let numOfStars = '';
         let score = this.series.score;
-
-        if (score >= 1) {
-            numOfStars += `
-                 <ul class="score">
+        /*let pending = this.series.filter((item) => !item.watched);
+        pending.forEach((film) => {
+            numOfStars = ` <ul class="score">
              <p class="info">SLOTWatchedFALSEL!!!</p>
-            <li class="score__star"   role= "button" >
+                <li class="score__star"   role= "button" >
                 <i class="icon--score far
                  fa-star" title="1/5"></i>
+            </li>
+            <li class="score__star">
+                <i class="icon--score far fa-star" title="2/5"></i>
+            </li> 
+            <li class="score__star">
+                <i class="icon--score far fa-star" title="3/5"></i>
+            </li>
+            <li class="score__star">
+                <i class="icon--score far fa-star" title="4/5"></i>
+            </li>
+            <li class="score__star">
+                <i class="icon--score far fa-star" title="5/5"></i>
+            </li>
+            </ul> `;
+        });
+
+        return numOfStars;
+    }*/
+
+        if (this.series.watched === true) {
+            numOfStars += `
+        <ul class="score">
+             <p class="info">SLOTGENERAL!!!</p>
+            <li class="score__star"   role= "button" >
+                <i class="icon--score fas fa-star" title="1/5"></i>
+            </li>
+            <li class="score__star">
+                <i class="icon--score  fas fa-star" title="2/5"></i>
+            </li>
+            <li class="score__star">
+                <i class="icon--score fas fa-star" title="3/5"></i>
+            </li>
+            <li class="score__star">
+                <i class="icon--score fas fa-star" title="4/5"></i>
+            </li>
+            <li class="score__star">
+                <i class="icon--score fas fa-star" title="5/5"></i>
+            </li>
+        </ul>`;
+            return numOfStars;
+        } else {
+            numOfStars += `
+        <ul class="score">
+             <p class="info">SLOTelse!!!</p>
+            <li class="score__star"   role= "button" >
+                <i class="icon--score far fa-star" title="1/5"></i>
             </li>
             <li class="score__star">
                 <i class="icon--score far fa-star" title="2/5"></i>
@@ -40,96 +85,8 @@ export class Score extends Component {
                 <i class="icon--score far fa-star" title="5/5"></i>
             </li>
         </ul>`;
-        } else {
-            numOfStars += `
-                 <ul class="score">
-             <p class="info">SLOTWatchedTRUE!!!</p>
-            <li class="score__star"   role= "button" >
-                <i class="icon--score fas
-                 fa-star" title="1/5"></i>
-            </li>
-            <li class="score__star">
-                <i class="icon--score fas fa-star" title="2/5"></i>
-            </li>
-            <li class="score__star">
-                <i class="icon--score fas fa-star" title="3/5"></i>
-            </li>
-            <li class="score__star">
-                <i class="icon--score fas fa-star" title="4/5"></i>
-            </li>
-            <li class="score__star">
-                <i class="icon--score fas fa-star" title="5/5"></i>
-            </li>
-        </ul>`;
+            return numOfStars;
         }
-
-        return numOfStars;
-
-        /* if (this.series.watched === false) {
-            numOfStars += `
-        <ul class="score">
-             <p class="info">SLOTGENERAL!!!</p>
-            <li class="score__star"   role= "button" >
-                <i class="icon--score  ${
-                    score === 0 ? 'fas' : 'far'
-                }  fa-star" title="1/5"></i>
-            </li>
-            <li class="score__star">
-                <i class="icon--score ${
-                    score === 0 ? 'fas' : 'far'
-                } fa-star" title="2/5"></i>
-            </li>
-            <li class="score__star">
-                <i class="icon--score ${
-                    score === 0 ? 'fas' : 'far'
-                }  fa-star" title="3/5"></i>
-            </li>
-            <li class="score__star">
-                <i class="icon--score ${
-                    score === 0 ? 'fas' : 'far'
-                }  fa-star" title="4/5"></i>
-            </li>
-            <li class="score__star">
-                <i class="icon--score ${
-                    score === 0 ? 'fas' : 'far'
-                }  fa-star" title="5/5"></i>
-            </li>
-        </ul>`;
-
-            return numOfStars;
-        } else {
-            numOfStars += `
-        <ul class="score">
-             <p class="info">SLOTGENERAL!!!</p>
-            <li class="score__star"   role= "button" >
-                <i class="icon--score  ${
-                    score === 0 ? 'fas' : 'far'
-                }  fa-star" title="1/5"></i>
-            </li>
-            <li class="score__star">
-                <i class="icon--score ${
-                    score === 0 ? 'fas' : 'far'
-                } fa-star" title="2/5"></i>
-            </li>
-            <li class="score__star">
-                <i class="icon--score ${
-                    score === 0 ? 'fas' : 'far'
-                }  fa-star" title="3/5"></i>
-            </li>
-            <li class="score__star">
-                <i class="icon--score ${
-                    score === 0 ? 'fas' : 'far'
-                }  fa-star" title="4/5"></i>
-            </li>
-            <li class="score__star">
-                <i class="icon--score ${
-                    score === 0 ? 'fas' : 'far'
-                }  fa-star" title="5/5"></i>
-            </li>
-        </ul>`;
-
-            return numOfStars;
-        }*/
     }
 }
 
