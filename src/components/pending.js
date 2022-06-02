@@ -1,7 +1,7 @@
 import { Component } from './component.js';
 //import { Score } from './score.js';
 import { seriesArr } from './seriesArr.js';
-import { Score } from './score.js';
+//import { Score } from './score.js';
 export class Pending extends Component {
     constructor(selector, score) {
         super();
@@ -10,7 +10,7 @@ export class Pending extends Component {
         this.series = seriesArr;
         this.template = this.createTemplate();
         this.outerRender(this.selector);
-        this.showStars();
+        //this.showStars();
     }
 
     createTemplate() {
@@ -27,7 +27,24 @@ export class Pending extends Component {
                                 />
                                 <h4 class="serie__title">"${element.name}</h4>
                                 <p class="serie__info">"${element.creator} ("${element.year})</p>
-                                <slot class="score"></slot>
+                                <ul class="score">
+             <p class="info">Pending!!!</p>
+            <li class="score__star"   role= "button" >
+                <i class="icon--score far fa-star" title="1/5"></i>
+            </li>
+            <li class="score__star">
+                <i class="icon--score far fa-star" title="2/5"></i>
+            </li>
+            <li class="score__star">
+                <i class="icon--score far fa-star" title="3/5"></i>
+            </li>
+            <li class="score__star">
+                <i class="icon--score far fa-star" title="4/5"></i>
+            </li>
+            <li class="score__star">
+                <i class="icon--score far fa-star" title="5/5"></i>
+            </li>
+        </ul>
                                 <i class="fas fa-times-circle icon--delete"></i>
                             </li>
                             `;
@@ -63,7 +80,7 @@ export class Pending extends Component {
             `;
         }
     }
-
+    /*
     showStars() {
         this.series.forEach((serie) => {
             if (serie.watched === false) {
@@ -71,7 +88,7 @@ export class Pending extends Component {
             }
         });
     }
-
+    */
     deleteSerie() {
         document.querySelector('.icon--delete');
     }
